@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gowtham Dev - Resume</title>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Open Sans', sans-serif;
+      background: #f0f0f0;
+      display: flex;
+      justify-content: center;
+      padding: 30px 10px;
+      min-height: 100vh;
+    }
+
+    .resume {
+      width: 794px;
+      background: #fff;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.13);
+    }
+
+    /* HEADER */
+    .header {
+      background: #1aa7bc;
+      display: flex;
+      align-items: stretch;
+      min-height: 120px;
+    }
+    .header-photo {
+      width: 120px;
+      min-width: 120px;
+      background: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px;
+    }
+    
+    .header-photo img {
+      width: 96px;
+      height: 110px;
+      object-fit: cover;
+    }
+    .header-info {
+      flex: 1;
+      padding: 18px 24px 14px 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .header-name {
+      font-size: 28px;
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+    .header-contacts {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px 20px;
+    }
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 11.5px;
+      color: #fff;
+    }
+    
+    .contact-icon {
+      width: 16px; height: 16px;
+      background: #fff;
+      border-radius: 2px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    
+    .skills-icon{ 
+      width: 96px;
+      height: 40px;
+      background: #cde8ee;
+      border: 2px solid #aad4de;
+      display: flex;
+     
+      
+      font-size: 11px;
+      color: #555;
+      
+    }
+    
+    .contact-icon svg { width: 10px; height: 10px; }
+
+    /* SECTIONS */
+    .section {
+      display: flex;
+      border-bottom: 1px solid #e0e0e0;
+    }
+    .section:last-child { border-bottom: none; }
+
+    .section-label {
+      width: 180px;
+      min-width: 180px;
+      padding: 14px 18px 14px 22px;
+      font-size: 11px;
+      font-weight: 700;
+      color: #222;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      position: relative;
+    }
+    .section-label::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 22px;
+      width: 38px; height: 2.5px;
+      background: #1aa7bc;
+    }
+    .section-content {
+      flex: 1;
+      padding: 14px 22px 14px 18px;
+      font-size: 11.5px;
+      color: #333;
+      line-height: 1.55;
+    }
+    
+.icon {
+    width: 14px;
+    height: 14px;
+    margin-right: 5px;
+    vertical-align: middle;
+}
+
+
+    /* SKILLS */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px 10px;
+    }
+    .skill-item { display: flex; align-items: baseline; gap: 5px; }
+    .skill-item::before { content: '•'; color: #1aa7bc; font-size: 13px; }
+
+    /* EXPERIENCE */
+    .exp-title { font-weight: 700; font-size: 12px; text-transform: uppercase; }
+    .exp-title .exp-date { font-weight: 400; font-size: 11px; color: #555; }
+    .exp-subtitle { font-style: italic; margin-bottom: 5px; }
+    .exp-bullets { list-style: none; margin-top: 4px; }
+    .exp-bullets li { display: flex; align-items: baseline; gap: 6px; margin-bottom: 3px; }
+    .exp-bullets li::before { content: '•'; color: #1aa7bc; flex-shrink: 0; }
+
+    /* EDUCATION */
+    .edu-institution { font-style: italic; font-weight: 600; }
+
+    /* ACCOMPLISHMENTS */
+    .acc-list { list-style: none; }
+    .acc-list li { display: flex; align-items: baseline; gap: 6px; margin-bottom: 2px; }
+    .acc-list li::before { content: '•'; color: #1aa7bc; flex-shrink: 0; }
+    .acc-link { color: #1aa7bc; text-decoration: underline; font-weight: 600; }
+
+    /* LANGUAGES */
+    .lang-grid { display: flex; flex-direction: column; gap: 6px; }
+    .lang-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0 10px; }
+    .lang-col .lang-name { font-weight: 700; }
+    .lang-bar { flex: 1; height: 5px; background: #e0e0e0; border-radius: 2px; overflow: hidden; margin: 3px 0; }
+    .lang-bar-fill { height: 100%; background: #1aa7bc; border-radius: 2px; }
+    .lang-level { font-size: 10px; color: #777; }
+
+    /* CERTIFICATIONS */
+    .cert-list { list-style: none; }
+    .cert-list li { display: flex; align-items: baseline; gap: 6px; margin-bottom: 3px; }
+    .cert-list li::before { content: '•'; color: #1aa7bc; flex-shrink: 0; }
+
+    /* WEBSITES */
+    .website-link { font-size: 11.5px; color: #1aa7bc; text-decoration: none; }
+    .website-link:hover { text-decoration: underline; }
+    .proj-list { list-style: none; }
+    .proj-list li { display: flex; align-items: baseline; gap: 6px; margin-bottom: 3px; }
+    .proj-list li::before { content: '•'; color: #1aa7bc; flex-shrink: 0; }
+    @media print {
+      body { background: #fff; padding: 0; }
+      .resume { box-shadow: none; }
+    }.card {
+  width: 795px; 
+  padding: 20px;
+  background: white;
+  border-radius: px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.08);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+}
+  </style>
+</head>
+<body>
+<div class="resume">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="header-photo">
+       <img src="Dev.jpg" alt="Gowtham Dev">
+        
+      <div class="photo-placeholder"></div>
+      <!-- Replace above with: <img src="your-photo.jpg" alt="Photo"> -->
+    </div>
+    <div class="header-info">
+      <div class="header-name">Gowtham Dev</div>
+      <div class="header-contacts">
+        <div class="contact-item">
+          <div class="contact-icon">
+            <svg viewBox="0 0 16 16" fill="#1aa7bc"><path d="M8 1C5.24 1 3 3.24 3 6c0 4 5 9 5 9s5-5 5-9c0-2.76-2.24-5-5-5zm0 7a2 2 0 110-4 2 2 0 010 4z"/></svg>
+          </div>
+          <a href ="banglore, India 560076">banglore, India 560076</a>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">
+            <svg viewBox="0 0 16 16" fill="#1aa7bc"><path d="M3.654 1.328a.678.678 0 00-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 004.168 6.608 17.569 17.569 0 006.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 00-.063-1.015l-2.307-1.794a.678.678 0 00-.58-.122l-2.19.547a1.745 1.745 0 01-1.657-.459L5.482 8.062a1.745 1.745 0 01-.46-1.657l.548-2.19a.678.678 0 00-.122-.58L3.654 1.328z"/></svg>
+          </div>
+          <a href="+916379376364">+916379376364</a>
+          
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">
+            <svg viewBox="0 0 16 16" fill="#1aa7bc"><path d="M0 4a2 2 0 012-2h12a2 2 0 012 2v8a2 2 0 01-2 2H2a2 2 0 01-2-2V4zm2-1a1 1 0 00-1 1v.217l7 4.2 7-4.2V4a1 1 0 00-1-1H2zm13 2.383l-4.758 2.855L15 11.114v-5.73zm-.034 6.878L9.271 8.82 8 9.583 6.728 8.82l-5.694 3.44A1 1 0 002 13h12a1 1 0 00.966-.739zM1 11.114l4.758-2.876L1 5.383v5.73z"/></svg>
+          </div><a href=" gowthamdevdev@gmail.com">
+          gowthamdevdev@gmail.com</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BODY -->
+  <div class="body">
+
+    <div class="card">
+    <div class="section">
+      <div class="section-label">Summary</div>
+      <div class="section-content">
+        Hardworking professional experienced in field and ready for challenging assignments.
+        Reliable in completing quality work and exceeding expectations.
+      </div>
+    </div>
+    </div>
+   
+     <div class="card">
+    <div class="section" >
+      <div class="section-label">Skills</div>
+      <div class="section-content">
+        <div class="skills-grid">
+          <div class="skill-item"><img src="https://cdn-icons-png.flaticon.com/512/226/226777.png" class="icon">Java </div>
+          <div class="skill-item">
+            <img src="https://cdn-icons-png.flaticon.com/512/732/732212.png" class="icon"> HTML</div>
+          <div class="skill-item">
+            <img src="https://cdn-icons-png.flaticon.com/512/732/732190.png" class="icon"> CSS</div>
+          <div class="skill-item">
+            <img src="https://cdn-icons-png.flaticon.com/512/5968/5968292.png" class="icon"> Java script</div>
+           <div class="skill-item"><img src="https://cdn-icons-png.flaticon.com/512/919/919836.png" class="icon">Springboot</div>
+            <div class="skill-item"><img src="https://cdn-icons-png.flaticon.com/512/528/528260.png" class="icon">MySQL Databases</div>
+        </div>
+      </div>
+    </div>
+    </div>
+
+    <!-- EXPERIENCE -->
+     <div class="card">
+    <div class="section">
+      <div class="section-label">Experience</div>
+      <div class="section-content">
+        <div class="exp-title">JAVA FULL STACK DEVELOPER, <span class="exp-date">01/2024 – 06/2024</span></div>
+        <div class="exp-subtitle">intern, Coapps, India</div>
+        <ul class="exp-bullets">
+          <li>Worked successfully with diverse group of coworkers to accomplish goals and address issues related to our products and services.</li>
+          <li>Worked with cross-functional teams to achieve goals.</li>
+        </ul>
+      </div>
+    </div>
+    </div>
+
+    <!-- EDUCATION -->
+      <div class="card">
+    <div class="section">
+      <div class="section-label">Education and<br>Training</div>
+      <div class="section-content">
+        <div class="edu-institution">Adithya Institute of Technology, Coimbatore, 06/2024</div>
+        <div>B.E.computer Science: Computer Science</div>
+      </div>
+    </div>
+    </div>
+    <div class="card">
+    <div class="section">
+      <div class="section-label">Accomplishments</div>
+      <div class="section-content">
+        <ul class="acc-list">
+          <li><span><strong>participation:</strong> participate in National Cadet Corps, participate in National Service Scheme</span></li>
+          <li><span><strong>Events:</strong> won a award in National Cadet Corps for gun fire, won many awards in sports</span></li>
+          <li><span><span class="acc-link">cricket</span>: Actively participated in local cricket competitions, demonstrating strong teamwork, leadership, and sportsmanship while effectively collaborating with diverse groups to achieve common goals.</span></li>
+        </ul>
+      </div>
+    </div>
+    </div>
+
+   <div class="card">
+    <div class="section">
+      <div class="section-label">Languages</div>
+      <div class="section-content">
+        <div class="lang-grid">
+          <div><strong>Tamil:</strong> First Language</div>
+          <div class="lang-row">
+            <div class="lang-col">
+              <div><span class="lang-name">English:</span> A2</div>
+              <div class="lang-bar"><div class="lang-bar-fill" style="width:30%"></div></div>
+              <div class="lang-level">Elementary (A2)</div>
+            </div>
+            <div class="lang-col">
+              <div><span class="lang-name">kannada:</span> A2</div>
+              <div class="lang-bar"><div class="lang-bar-fill" style="width:30%"></div></div>
+              <div class="lang-level">Elementary (A2)</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+     </div>
+
+   <div class="card">
+    <div class="section">
+      <div class="section-label">Certifications</div>
+      <div class="section-content">
+        <ul class="cert-list">
+          <li>java certification in GUVI</li>
+          <li>java full stack certification in Jspiders academy</li>
+        </ul>
+      </div>
+    </div>
+    </div>
+
+    <div class="card">
+    <div class="section">
+      <div class="section-label">Github<br><br>linkedin<br></div>
+      <div class="section-content">
+        <a class="Github" href="http://linkedin.com/in/gowtham-dev-87aa02257" target="_blank" class=" http://linkedin.com/in/gowtham-dev-87aa02257" target="_blank" >
+         https://github.com/gowthamdev234<br><br> http://linkedin.com/in/gowtham-dev-87aa02257
+        </a>
+      </div>
+    </div> 
+    </div>
+    <div class="card">
+    <div class="section">
+      <div class="section-label">PROJECTES</div>
+      <ul>
+      <div class="section-content">
+        <li>using Java, Spring Boot, MySQL</li> 
+            <li>  Implemented login and product management</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</div>
+</div>
+</body>
+</html>
